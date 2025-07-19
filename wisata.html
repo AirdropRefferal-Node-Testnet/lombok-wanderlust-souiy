@@ -2,30 +2,51 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Blog Wisata - Lombok Wanderlust</title>
+  <title>Paket Wisata Lombok - Lombok Wanderlust</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.tailwindcss.com" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .font-brand {
+      font-family: 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1.5px;
+    }
+    .package-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .category-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body class="bg-gradient-to-tl from-blue-50 via-white to-blue-100 min-h-screen text-gray-800">
   
-  <!-- Navbar (Sama dengan index.html) -->
-  <header class="fixed w-full bg-white/90 shadow-md z-20">
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white/90 shadow-md z-30">
     <nav class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
       <div class="flex items-center gap-2">
         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow">
-          <img src="assets/images/logo.png" alt="Logo Lombok Wanderlust" class="w-8 h-8 rounded-full">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0937cc3b-ceb1-4417-96e8-bed5efc2a3ce.png" 
+               alt="Logo Lombok Wanderlust" 
+               class="w-8 h-8 rounded-full">
         </div>
         <span class="font-brand font-extrabold text-xl tracking-wider text-blue-700">Lombok Wanderlust</span>
       </div>
       <div class="hidden lg:flex gap-6 font-medium text-gray-700">
         <a href="index.html#explore" class="hover:text-blue-700 transition">Paket Wisata</a>
-        <a href="wisata.html" class="hover:text-blue-700 transition">Wisata</a>
+        <a href="wisata.html" class="hover:text-blue-700 transition font-bold text-blue-600">Destinasi</a>
+        <a href="blog.html" class="hover:text-blue-700 transition">Blog</a>
         <a href="index.html#gallery" class="hover:text-blue-700 transition">Galeri</a>
-        <a href="index.html#about" class="hover:text-blue-700 transition">Tentang</a>
         <a href="index.html#contact" class="hover:text-blue-700 transition">Kontak</a>
       </div>
       <div class="lg:hidden flex items-center">
@@ -39,128 +60,35 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden lg:hidden bg-white/95 shadow-lg py-4">
       <a href="index.html#explore" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Paket Wisata</a>
-      <a href="wisata.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Wisata</a>
+      <a href="wisata.html" class="block px-6 py-2 text-blue-600 font-medium hover:bg-blue-50 transition">Destinasi</a>
+      <a href="blog.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Blog</a>
       <a href="index.html#gallery" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Galeri</a>
-      <a href="index.html#about" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Tentang</a>
       <a href="index.html#contact" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Kontak</a>
     </div>
   </header>
 
-  <!-- Wisata Content -->
-  <main class="pt-32 pb-16 px-6 max-w-5xl mx-auto">
-    <h1 class="font-brand text-4xl text-center text-blue-700 font-bold mb-12">Destinasi Wisata Lombok</h1>
+  <!-- Main Content -->
+  <main class="pt-32 pb-16 px-6 max-w-6xl mx-auto">
+    <h1 class="font-brand text-4xl text-center text-blue-700 font-bold mb-4">Paket Wisata Lombok</h1>
+    <p class="text-lg text-center text-gray-600 mb-12">Temukan pengalaman terbaik menjelajahi keindahan Lombok</p>
     
-    <!-- Filter Kategori -->
-    <div class="flex flex-wrap gap-3 justify-center mb-12">
-      <button class="px-4 py-2 bg-blue-600 text-white rounded-full">Semua</button>
-      <button class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Pantai</button>
-      <button class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Gunung</button>
-      <button class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Budaya</button>
-      <button class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Air Terjun</button>
-      <button class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Kuliner</button>
+    <!-- Category Filter -->
+    <div class="flex flex-wrap gap-3 justify-center mb-8">
+      <button onclick="filterPackages('all')" class="px-4 py-2 bg-blue-600 text-white rounded-full">Semua</button>
+      <button onclick="filterPackages('culture')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Budaya</button>
+      <button onclick="filterPackages('beach')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Pantai</button>
+      <button onclick="filterPackages('nature')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Alam</button>
+      <button onclick="filterPackages('waterfall')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Air Terjun</button>
+      <button onclick="filterPackages('gili')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Gili</button>
     </div>
 
-    <!-- Daftar Wisata -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Wisata 1 -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/gili-trawangan.jpg" alt="Gili Trawangan" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <div class="flex justify-between items-start">
-            <h2 class="font-bold text-xl mb-2">Gili Trawangan</h2>
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pantai</span>
-          </div>
-          <p class="text-gray-600 mb-4">Pulau kecil tanpa kendaraan bermotor dengan pasir putih dan terumbu karang indah.</p>
-          <div class="flex items-center text-yellow-500 mb-3">
-            ★★★★★ <span class="text-gray-600 ml-2 text-sm">(4.9)</span>
-          </div>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Lihat Detail →</a>
-        </div>
-      </div>
-
-      <!-- Wisata 2 -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/pink-beach.jpg" alt="Pink Beach" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <div class="flex justify-between items-start">
-            <h2 class="font-bold text-xl mb-2">Pantai Pink</h2>
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pantai</span>
-          </div>
-          <p class="text-gray-600 mb-4">Pantai dengan pasir berwarna pink alami yang langka di dunia.</p>
-          <div class="flex items-center text-yellow-500 mb-3">
-            ★★★★☆ <span class="text-gray-600 ml-2 text-sm">(4.5)</span>
-          </div>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Lihat Detail →</a>
-        </div>
-      </div>
-
-      <!-- Wisata 3 -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/desa-sade.jpg" alt="Desa Sade" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <div class="flex justify-between items-start">
-            <h2 class="font-bold text-xl mb-2">Desa Sade</h2>
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Budaya</span>
-          </div>
-          <p class="text-gray-600 mb-4">Desa tradisional Suku Sasak dengan rumah adat dan budaya yang masih asli.</p>
-          <div class="flex items-center text-yellow-500 mb-3">
-            ★★★★☆ <span class="text-gray-600 ml-2 text-sm">(4.3)</span>
-          </div>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Lihat Detail →</a>
-        </div>
-      </div>
-
-      <!-- Wisata 4 -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/tiu-kelep.jpg" alt="Air Terjun Tiu Kelep" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <div class="flex justify-between items-start">
-            <h2 class="font-bold text-xl mb-2">Air Terjun Tiu Kelep</h2>
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Air Terjun</span>
-          </div>
-          <p class="text-gray-600 mb-4">Air terjun setinggi 45 meter dengan kolam alami yang menyegarkan.</p>
-          <div class="flex items-center text-yellow-500 mb-3">
-            ★★★★★ <span class="text-gray-600 ml-2 text-sm">(4.8)</span>
-          </div>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Lihat Detail →</a>
-        </div>
-      </div>
-
-      <!-- Wisata 5 -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/sembalun.jpg" alt="Sembalun" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <div class="flex justify-between items-start">
-            <h2 class="font-bold text-xl mb-2">Sembalun</h2>
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Gunung</span>
-          </div>
-          <p class="text-gray-600 mb-4">Lembah subur di kaki Gunung Rinjani dengan pemandangan spektakuler.</p>
-          <div class="flex items-center text-yellow-500 mb-3">
-            ★★★★★ <span class="text-gray-600 ml-2 text-sm">(4.9)</span>
-          </div>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Lihat Detail →</a>
-        </div>
-      </div>
-
-      <!-- Wisata 6 -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/narmada.jpg" alt="Taman Narmada" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <div class="flex justify-between items-start">
-            <h2 class="font-bold text-xl mb-2">Taman Narmada</h2>
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Sejarah</span>
-          </div>
-          <p class="text-gray-600 mb-4">Taman kerajaan dengan kolam suci dan konsep miniatur Gunung Rinjani.</p>
-          <div class="flex items-center text-yellow-500 mb-3">
-            ★★★★☆ <span class="text-gray-600 ml-2 text-sm">(4.2)</span>
-          </div>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Lihat Detail →</a>
-        </div>
-      </div>
+    <!-- Packages Grid -->
+    <div id="packages-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Packages will be loaded by JavaScript -->
     </div>
   </main>
 
-  <!-- Footer (Sama dengan index.html) -->
+  <!-- Footer -->
   <footer class="bg-blue-800 text-white py-7">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 gap-4">
       <div>
@@ -174,34 +102,294 @@
     </div>
   </footer>
 
- <!-- Floating Social Media Widgets -->
-<div class="fixed flex flex-col gap-3 z-40" style="right:2rem;bottom:2rem;">
-  <!-- Email Widget -->
-  <a href="mailto:dagul8669@gmail.com" aria-label="Email Lombok Wanderlust"
-    class="bg-gray-700 hover:bg-gray-800 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
-    <!-- Email SVG -->
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-    </svg>
-  </a>
-  
-  <a href="https://wa.me/62811222333" target="_blank" rel="noopener" aria-label="Whatsapp Lombok Wanderlust"
-    class="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
-    <!-- WhatsApp SVG -->
-    <svg width="28" height="28" fill="currentColor" viewBox="0 0 32 32">
-      <path d="M16.003 5.334c-5.894 0-10.67 4.78-10.67 10.67a10.61 10.61 0 001.502 5.475l-1.565 5.623a1.337 1.337 0 001.637 1.641l5.583-1.566A10.644 10.644 0 0016 26.67c5.892 0 10.669-4.779 10.669-10.667 0-5.89-4.777-10.669-10.666-10.669zm0 19.186a8.491 8.491 0 01-4.331-1.19l-.312-.184-3.316.933.938-3.23-.203-.329a8.453 8.453 0 01-1.41-4.653c0-4.679 3.811-8.489 8.489-8.489 4.678 0 8.488 3.81 8.488 8.489s-3.811 8.489-8.489 8.489zm4.274-6.386c-.227-.114-1.344-.664-1.552-.74-.208-.076-.36-.114-.512.114-.152.228-.585.74-.717.893-.133.152-.264.171-.491.057-.228-.114-.959-.353-1.825-1.124-.675-.601-1.13-1.344-1.263-1.572-.133-.228-.014-.351.1-.464.102-.102.227-.265.34-.398.115-.133.151-.228.227-.379.075-.15.037-.285-.019-.398-.057-.114-.508-1.231-.697-1.686-.184-.439-.373-.378-.512-.385l-.433-.009c-.151 0-.396.057-.604.266s-.793.774-.793 1.887.812 2.196.924 2.348c.113.152 1.604 2.448 3.895 3.337.544.187.967.299 1.297.383.545.138 1.041.119 1.431.072.437-.053 1.344-.548 1.534-1.078.19-.53.19-.984.133-1.077-.056-.094-.207-.152-.434-.266z"/>
-    </svg>
-  </a>
-  <a href="https://t.me/lombokwanderlust" target="_blank" rel="noopener" aria-label="Telegram Lombok Wanderlust"
-    class="bg-blue-400 hover:bg-blue-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
-    <!-- Telegram SVG -->
-    <svg width="28" height="28" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-      <circle cx="120" cy="120" r="120" fill="#37AEE2"/>
-      <path d="M168 77c2-1 4 0 4 2l-21 101c0 2-3 3-4 1l-30-22-15 14c-1 1-3 1-3-1l3-19 66-62c1-1-1-2-2-1l-81 51-17-5c-2 0-2-3 0-3l134-53z" fill="#FFF"/>
-    </svg>
-  </a>
-</div>
+  <!-- Floating Chat Widget -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <div class="relative">
+      <!-- Chat Options -->
+      <div id="chatOptions" class="hidden absolute bottom-full right-0 mb-3 flex flex-col gap-3">
+        <a href="https://wa.me/6281234567890" target="_blank" 
+           class="w-12 h-12 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110"
+           title="Chat via WhatsApp">
+          <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+        <a href="https://t.me/lombokwanderlust" target="_blank" 
+           class="w-12 h-12 bg-[#0088cc] hover:bg-[#006699] text-white rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110"
+           title="Chat via Telegram">
+          <i class="fab fa-telegram text-2xl"></i>
+        </a>
+        <button onclick="showLiveChat()" 
+                class="w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110"
+                title="Live Chat">
+          <i class="fas fa-comment-dots text-2xl"></i>
+        </button>
+      </div>
+      
+      <!-- Main Chat Button -->
+      <button onclick="toggleChatOptions()" 
+              class="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-xl transition-all transform hover:scale-105"
+              title="Bantuan Cepat">
+        <i class="fas fa-headset text-2xl"></i>
+      </button>
+    </div>
+  </div>
 
-  <script src="assets/js/main.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Chat Widget Functions
+    function toggleChatOptions() {
+      document.getElementById('chatOptions').classList.toggle('hidden');
+    }
+
+    function showLiveChat() {
+      // Implement live chat functionality if needed
+      window.location.href = "mailto:dagul8669@gmail.com?subject=Live%20Chat%20Lombok%20Wanderlust";
+    }
+
+    // Package Data
+    const packages = [
+      // 🌾 Budaya & Desa Tradisional
+      {
+        id: 1,
+        title: "Eksplorasi Desa Sukarara",
+        category: "culture",
+        description: "Tur tenun tradisional dengan workshop singkat membuat kain khas Sasak",
+        price: 350000,
+        duration: "5 jam",
+        image: "assets/images/sukarara.jpg",
+        includes: ["Transportasi", "Pemandu lokal", "Workshop tenun", "Makan siang"]
+      },
+      {
+        id: 2,
+        title: "Gerabah Banyumulek",
+        category: "culture",
+        description: "Belajar membuat gerabah langsung dari pengrajin tradisional",
+        price: 300000,
+        duration: "4 jam",
+        image: "assets/images/banyumulek.jpg",
+        includes: ["Transportasi", "Pemandu", "Materi gerabah", "Praktik membuat gerabah"]
+      },
+      {
+        id: 3,
+        title: "Kehidupan Desa Ende",
+        category: "culture",
+        description: "Immersive experience di desa tradisional Sasak",
+        price: 400000,
+        duration: "6 jam",
+        image: "assets/images/ende-village.jpg",
+        includes: ["Transportasi", "Pemandu", "Kunjungan rumah adat", "Makan tradisional"]
+      },
+      
+      // 🌊 Pantai & Laut
+      {
+        id: 4,
+        title: "Tanjung Aan Beach Day",
+        category: "beach",
+        description: "Hari penuh di pantai dengan pasir sehalus tepung",
+        price: 450000,
+        duration: "8 jam",
+        image: "assets/images/tanjung-aan.jpg",
+        includes: ["Transportasi", "Kursi pantai", "Snorkeling gear", "Makan siang"]
+      },
+      {
+        id: 5,
+        title: "Surfing Selong Belanak",
+        category: "beach",
+        description: "Belajar surfing dengan instruktur profesional untuk pemula",
+        price: 550000,
+        duration: "6 jam",
+        image: "assets/images/selong-belanak.jpg",
+        includes: ["Transportasi", "Papan selancar", "Instruktur", "Makan siang"]
+      },
+      {
+        id: 6,
+        title: "Eksklusif Pink Beach",
+        category: "beach",
+        description: "Trip private ke pantai pasir pink dengan snorkeling",
+        price: 600000,
+        duration: "7 jam",
+        image: "assets/images/pink-beach.jpg",
+        includes: ["Transportasi", "Perahu", "Alat snorkeling", "Makan seafood"]
+      },
+      
+      // 🌄 Perbukitan & Alam
+      {
+        id: 7,
+        title: "Sunrise Meresek Hill",
+        category: "nature",
+        description: "Menyaksikan sunrise terbaik di Lombok dari ketinggian",
+        price: 350000,
+        duration: "5 jam",
+        image: "assets/images/meresek-hill.jpg",
+        includes: ["Transportasi", "Pemandu", "Sarapan", "Air mineral"]
+      },
+      {
+        id: 8,
+        title: "Tour Persawahan Lombok",
+        category: "nature",
+        description: "Jelajahi keindahan sawah terasering dan kehidupan petani",
+        price: 300000,
+        duration: "4 jam",
+        image: "assets/images/rice-field.jpg",
+        includes: ["Transportasi", "Pemandu", "Cicipi hasil panen", "Air kelapa"]
+      },
+      
+      // 💦 Air Terjun
+      {
+        id: 9,
+        title: "Petualangan Benang Kelambu",
+        category: "waterfall",
+        description: "Trekking ke air terjun unik berbentuk kelambu",
+        price: 400000,
+        duration: "6 jam",
+        image: "assets/images/benang-kelambu.jpg",
+        includes: ["Transportasi", "Pemandu", "Tiket masuk", "Makan tradisional"]
+      },
+      {
+        id: 10,
+        title: "Sendang Gile & Tiu Kelep",
+        category: "waterfall",
+        description: "Kunjungan ke dua air terjun terkenal di Lombok Utara",
+        price: 450000,
+        duration: "7 jam",
+        image: "assets/images/sendang-gile.jpg",
+        includes: ["Transportasi", "Pemandu", "Tiket masuk", "Makan siang"]
+      },
+      
+      // 🏝️ Gili & Pelabuhan
+      {
+        id: 11,
+        title: "Gili Trawangan Getaway",
+        category: "gili",
+        description: "Trip sehari penuh menjelajahi Gili Trawangan",
+        price: 750000,
+        duration: "10 jam",
+        image: "assets/images/gili-trawangan.jpg",
+        includes: ["Transport kapal", "Sepeda", "Snorkeling gear", "Makan siang"]
+      },
+      {
+        id: 12,
+        title: "Snorkeling 3 Gili",
+        category: "gili",
+        description: "Snorkeling di spot terbaik sekitar Gili Trawangan, Meno & Air",
+        price: 850000,
+        duration: "8 jam",
+        image: "assets/images/gili-snorkeling.jpg",
+        includes: ["Transport kapal", "Pemandu", "Perlengkapan snorkeling", "Makan"]
+      },
+      {
+        id: 13,
+        title: "Private Boat Gili Nanggu",
+        category: "gili",
+        description: "Trip eksklusif ke pulau pribadi Gili Nanggu",
+        price: 1200000,
+        duration: "8 jam",
+        image: "assets/images/gili-nanggu.jpg",
+        includes: ["Private boat", "Pemandu", "Snorkeling gear", "Makan seafood"]
+      }
+    ];
+
+    // Package Functions
+    function loadPackages() {
+      const container = document.getElementById('packages-container');
+      container.innerHTML = '';
+
+      const filtered = currentCategory === 'all' 
+        ? packages 
+        : packages.filter(pkg => pkg.category === currentCategory);
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<p class="col-span-full text-center py-12 text-gray-500">Tidak ada paket ditemukan</p>';
+        return;
+      }
+
+      filtered.forEach(pkg => {
+        const packageEl = document.createElement('div');
+        packageEl.className = 'package-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 relative';
+        packageEl.innerHTML = `
+          <div class="relative">
+            <img src="${pkg.image}" alt="${pkg.title}" class="w-full h-48 object-cover">
+            <span class="category-tag ${getCategoryColor(pkg.category)}">
+              ${getCategoryName(pkg.category)}
+            </span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">${pkg.title}</h3>
+            <p class="text-gray-600 mb-4 text-sm">${pkg.description}</p>
+            
+            <div class="flex justify-between items-center mb-4">
+              <div>
+                <span class="text-blue-600 font-bold text-lg">Rp${formatPrice(pkg.price)}</span>
+                <span class="text-gray-500 text-sm">/orang</span>
+              </div>
+              <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i>${pkg.duration}</span>
+            </div>
+            
+            <div class="mb-4">
+              <p class="text-sm font-medium text-gray-700 mb-2">Termasuk:</p>
+              <ul class="text-sm text-gray-600 space-y-1">
+                ${pkg.includes.map(item => `<li><i class="fas fa-check text-green-500 mr-2"></i>${item}</li>`).join('')}
+              </ul>
+            </div>
+            
+            <button onclick="bookPackage('${pkg.title}', ${pkg.price})" 
+                    class="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-medium transition flex items-center justify-center">
+              <i class="fas fa-calendar-check mr-2"></i> Pesan Sekarang
+            </button>
+          </div>
+        `;
+        container.appendChild(packageEl);
+      });
+    }
+
+    function filterPackages(category) {
+      currentCategory = category;
+      loadPackages();
+      document.getElementById('packages-container').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function bookPackage(packageName, packagePrice) {
+      const subject = `Pemesanan Paket ${packageName}`;
+      const body = `Halo Lombok Wanderlust,\n\nSaya ingin memesan paket ${packageName} dengan harga Rp${formatPrice(packagePrice)}.\n\nMohon informasi lebih lanjut mengenai:\n- Jadwal yang tersedia\n- Cara pembayaran\n- Syarat dan ketentuan\n\nTerima kasih.\n\nNama:\nNo. HP:\nJumlah peserta:`;
+      
+      window.location.href = `mailto:dagul8669@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    // Helper Functions
+    function getCategoryName(category) {
+      const names = {
+        'culture': 'Budaya',
+        'beach': 'Pantai',
+        'nature': 'Alam',
+        'waterfall': 'Air Terjun',
+        'gili': 'Gili'
+      };
+      return names[category] || 'Wisata';
+    }
+
+    function getCategoryColor(category) {
+      const colors = {
+        'culture': 'bg-purple-100 text-purple-800',
+        'beach': 'bg-blue-100 text-blue-800',
+        'nature': 'bg-green-100 text-green-800',
+        'waterfall': 'bg-cyan-100 text-cyan-800',
+        'gili': 'bg-orange-100 text-orange-800'
+      };
+      return colors[category] || 'bg-gray-100 text-gray-800';
+    }
+
+    function formatPrice(price) {
+      return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    // Initialize
+    let currentCategory = 'all';
+    document.addEventListener('DOMContentLoaded', function() {
+      loadPackages();
+    });
+  </script>
 </body>
 </html>
