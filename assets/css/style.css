@@ -1,0 +1,60 @@
+/* Base Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #e0f2fe 100%);
+  min-height: 100vh;
+  color: #1e3a8a;
+}
+
+.font-brand {
+  font-family: 'Montserrat', Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+}
+
+/* Card Hover Effects */
+.feature-card:hover {
+  transform: translateY(-5px) scale(1.025);
+  box-shadow: 0 8px 32px rgba(45,88,176,0.07);
+  background: rgba(255,255,255,0.90);
+}
+
+/* Floating Widgets */
+.floating-widgets {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 40;
+}
+
+.floating-widget {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.floating-widget:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+    padding-top: 6rem;
+  }
+}
