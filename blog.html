@@ -2,32 +2,75 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Blog Wisata - Lombok Wanderlust</title>
+  <title>Lombok Wanderlust</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Heading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .font-brand {
+      font-family: 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1.5px;
+    }
+    .glass {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(8px);
+    }
+    .feature-card:hover {
+      transform: translateY(-5px) scale(1.025);
+      box-shadow: 0 8px 32px rgba(45,88,176,0.07);
+      background: rgba(255,255,255,0.90);
+    }
+    /* search-suggestion related styles */
+    .search-suggestion:focus-within .suggestion-list {
+      display: block;
+    }
+    .suggestion-list {
+      display: none;
+    }
+    /* Custom style for larger feature card images */
+    .feature-card-img {
+      width: 100%; /* Make image take full width of its container */
+      max-width: 180px; /* Increased max-width for better visibility */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body class="bg-gradient-to-tl from-blue-50 via-white to-blue-100 min-h-screen text-gray-800">
-  
+
   <!-- Navbar -->
   <header class="fixed w-full bg-white/90 shadow-md z-20">
     <nav class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
       <div class="flex items-center gap-2">
         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow">
-          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0937cc3b-ceb1-4417-96e8-bed5efc2a3ce.png" alt="Logo Lombok Wanderlust" class="w-8 h-8 rounded-full">
+          <!-- Placeholder logo -->
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0937cc3b-ceb1-4417-96e8-bed5efc2a3ce.png"
+            alt="Logo Lomboko Wanderlust, lingkaran biru dengan inisial LW putih, desain modern minimalis"
+            class="w-8 h-8 rounded-full"
+            onerror='this.style.display="none";this.parentNode.style.background="#1e40af";this.parentNode.innerHTML="<span style=\"color:white;font-size:20px;font-weight:bold;\">LW</span>";'
+          />
         </div>
         <span class="font-brand font-extrabold text-xl tracking-wider text-blue-700">Lombok Wanderlust</span>
       </div>
+
+      <!-- Desktop Navigation -->
       <div class="hidden lg:flex gap-6 font-medium text-gray-700">
         <a href="wisata.html" class="hover:text-blue-700 transition">Paket Wisata</a>
         <a href="blog.html" class="hover:text-blue-700 transition">Wisata</a>
-        <a href="index.html#gallery" class="hover:text-blue-700 transition">Galeri</a>
-        <a href="index.html#about" class="hover:text-blue-700 transition">Tentang</a>
-        <a href="index.html#contact" class="hover:text-blue-700 transition">Kontak</a>
+        <a href="#gallery" class="hover:text-blue-700 transition">Galeri</a> <!-- Added Galeri link -->
+        <a href="#about" class="hover:text-blue-700 transition">Tentang</a>
+        <a href="#contact" class="hover:text-blue-700 transition">Kontak</a>
       </div>
+
+      <!-- Mobile Menu Button -->
       <div class="lg:hidden flex items-center">
         <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -36,13 +79,14 @@
         </button>
       </div>
     </nav>
-    <!-- Mobile Menu -->
+
+    <!-- Mobile Menu (Hidden by default) -->
     <div id="mobile-menu" class="hidden lg:hidden bg-white/95 shadow-lg py-4">
-      <a href="wisara.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Paket Wisata</a>
+      <a href="wisata.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Paket Wisata</a>
       <a href="blog.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Wisata</a>
-      <a href="index.html#gallery" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Galeri</a>
-      <a href="index.html#about" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Tentang</a>
-      <a href="index.html#contact" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Kontak</a>
+      <a href="#gallery" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Galeri</a> <!-- Added Galeri link -->
+      <a href="#about" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Tentang</a>
+      <a href="#contact" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Kontak</a>
     </div>
   </header>
 
