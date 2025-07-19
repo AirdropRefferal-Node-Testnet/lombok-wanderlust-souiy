@@ -89,10 +89,11 @@
       <a href="index.html#contact" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Kontak</a>
     </div>
   </header>
-  <!-- Main Content -->
+
+   <!-- Main Content -->
   <main class="pt-32 pb-16 px-6 max-w-6xl mx-auto">
     <h1 class="font-brand text-4xl text-center text-blue-700 font-bold mb-4">Paket Wisata Lombok</h1>
-    <p class="text-lg text-center text-gray-600 mb-12">Temukan pengalaman terbaik menjelajahi keindahan Lombok</p>
+    <p class="text-lg text-center text-gray-600 mb-12">Jelajahi keindahan Lombok dengan paket lengkap kami</p>
     
     <!-- Category Filter -->
     <div class="flex flex-wrap gap-3 justify-center mb-8">
@@ -156,161 +157,310 @@
   </div>
 
   <script>
-    // Mobile Menu Toggle
-    document.getElementById('mobile-menu-button').addEventListener('click', function() {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-
-    // Chat Widget Functions
-    function toggleChatOptions() {
-      document.getElementById('chatOptions').classList.toggle('hidden');
-    }
-
-    function showLiveChat() {
-      // Implement live chat functionality if needed
-      window.location.href = "mailto:dagul8669@gmail.com?subject=Live%20Chat%20Lombok%20Wanderlust";
-    }
-
     // Package Data
     const packages = [
-      // 🌾 Budaya & Desa Tradisional
       {
         id: 1,
-        title: "Eksplorasi Desa Sukarara",
+        title: "Sasak Tour",
         category: "culture",
-        description: "Tur tenun tradisional dengan workshop singkat membuat kain khas Sasak",
-        price: 350000,
-        duration: "5 jam",
-        image: "assets/images/sukarara.jpg",
-        includes: ["Transportasi", "Pemandu lokal", "Workshop tenun", "Makan siang"]
+        description: "Tur lengkap budaya Sasak mengunjungi desa-desa tradisional dan pantai indah",
+        price: 850000,
+        duration: "8 jam",
+        minPerson: 2,
+        includes: [
+          "Transportasi AC",
+          "Pemandu profesional",
+          "Tiket masuk destinasi",
+          "Makan siang",
+          "Air mineral"
+        ],
+        destinations: [
+          "Banyumulek (Desa Gerabah)",
+          "Sukarara (Desa Tenun)",
+          "Sade (Desa Tradisional Sasak)",
+          "Batu Kotak/Mawun/Selong Belanak"
+        ],
+        image: "assets/images/sasak-tour.jpg"
       },
       {
         id: 2,
-        title: "Gerabah Banyumulek",
-        category: "culture",
-        description: "Belajar membuat gerabah langsung dari pengrajin tradisional",
-        price: 300000,
-        duration: "4 jam",
-        image: "assets/images/banyumulek.jpg",
-        includes: ["Transportasi", "Pemandu", "Materi gerabah", "Praktik membuat gerabah"]
+        title: "Hidden Waterfall & Village",
+        category: "nature",
+        description: "Kombinasi budaya dan alam dengan air terjun spektakuler",
+        price: 750000,
+        duration: "7 jam",
+        minPerson: 2,
+        includes: [
+          "Transportasi AC",
+          "Pemandu lokal",
+          "Tiket masuk",
+          "Makan tradisional"
+        ],
+        destinations: [
+          "Sukarara (Desa Tenun)",
+          "Benang Setokel Waterfall",
+          "Benang Kelambu Waterfall"
+        ],
+        image: "assets/images/hidden-waterfall.jpg"
       },
       {
         id: 3,
-        title: "Kehidupan Desa Ende",
-        category: "culture",
-        description: "Immersive experience di desa tradisional Sasak",
-        price: 400000,
-        duration: "6 jam",
-        image: "assets/images/ende-village.jpg",
-        includes: ["Transportasi", "Pemandu", "Kunjungan rumah adat", "Makan tradisional"]
+        title: "Secret Island Snorkeling",
+        category: "gili",
+        description: "Snorkeling di gili-gili tersembunyi dengan terumbu karang indah",
+        price: 1200000,
+        duration: "8 jam",
+        minPerson: 2,
+        includes: [
+          "Transport kapal cepat",
+          "Perlengkapan snorkeling",
+          "Pemandu snorkeling",
+          "Makan siang seafood"
+        ],
+        destinations: [
+          "Gili Nanggu",
+          "Gili Sudak",
+          "Gili Kedis"
+        ],
+        image: "assets/images/secret-island.jpg"
       },
-      
-      // 🌊 Pantai & Laut
       {
         id: 4,
-        title: "Tanjung Aan Beach Day",
-        category: "beach",
-        description: "Hari penuh di pantai dengan pasir sehalus tepung",
-        price: 450000,
-        duration: "8 jam",
-        image: "assets/images/tanjung-aan.jpg",
-        includes: ["Transportasi", "Kursi pantai", "Snorkeling gear", "Makan siang"]
+        title: "Snorkeling 3 Gilis",
+        category: "gili",
+        description: "Jelajahi tiga gili utama dengan spot snorkeling terbaik",
+        price: 950000,
+        duration: "9 jam",
+        minPerson: 2,
+        includes: [
+          "Speedboat transfer",
+          "Snorkeling gear",
+          "Makan siang",
+          "Air mineral"
+        ],
+        destinations: [
+          "Gili Air",
+          "Gili Meno",
+          "Gili Trawangan"
+        ],
+        image: "assets/images/3gilis.jpg"
       },
       {
         id: 5,
-        title: "Surfing Selong Belanak",
+        title: "Pink Beach Snorkeling",
         category: "beach",
-        description: "Belajar surfing dengan instruktur profesional untuk pemula",
-        price: 550000,
-        duration: "6 jam",
-        image: "assets/images/selong-belanak.jpg",
-        includes: ["Transportasi", "Papan selancar", "Instruktur", "Makan siang"]
+        description: "Eksplorasi keindahan bawah laut Pink Beach dan sekitarnya",
+        price: 1100000,
+        duration: "7 jam",
+        minPerson: 2,
+        includes: [
+          "Transportasi kapal",
+          "Perlengkapan snorkeling",
+          "Pemandu lokal",
+          "Makan siang"
+        ],
+        destinations: [
+          "Sand Island",
+          "Gili Petelu",
+          "Pink Beach"
+        ],
+        image: "assets/images/pink-beach.jpg"
       },
       {
         id: 6,
-        title: "Eksklusif Pink Beach",
-        category: "beach",
-        description: "Trip private ke pantai pasir pink dengan snorkeling",
-        price: 600000,
-        duration: "7 jam",
-        image: "assets/images/pink-beach.jpg",
-        includes: ["Transportasi", "Perahu", "Alat snorkeling", "Makan seafood"]
+        title: "Senaru Waterfalls",
+        category: "waterfall",
+        description: "Petualangan ke air terjun terkenal di Lombok Utara",
+        price: 650000,
+        duration: "6 jam",
+        minPerson: 2,
+        includes: [
+          "Transportasi AC",
+          "Pemandu trekking",
+          "Tiket masuk",
+          "Air mineral"
+        ],
+        destinations: [
+          "Sendang Gile Waterfall",
+          "Tiu Kelep Waterfalls"
+        ],
+        image: "assets/images/senaru-waterfalls.jpg"
       },
-      
-      // 🌄 Perbukitan & Alam
       {
         id: 7,
-        title: "Sunrise Meresek Hill",
-        category: "nature",
-        description: "Menyaksikan sunrise terbaik di Lombok dari ketinggian",
-        price: 350000,
-        duration: "5 jam",
-        image: "assets/images/meresek-hill.jpg",
-        includes: ["Transportasi", "Pemandu", "Sarapan", "Air mineral"]
+        title: "Linkcross Lombok",
+        category: "culture",
+        description: "Tur lintas budaya dan alam Lombok yang beragam",
+        price: 900000,
+        duration: "10 jam",
+        minPerson: 2,
+        includes: [
+          "Transportasi full AC",
+          "Pemandu multi-bahasa",
+          "Makan siang",
+          "Tiket masuk semua lokasi"
+        ],
+        destinations: [
+          "Masjid Kuno Bayan",
+          "Sembalun",
+          "Rumah adat Desa Beleq",
+          "Bukit Selong"
+        ],
+        image: "assets/images/linkcross.jpg"
       },
       {
         id: 8,
-        title: "Tour Persawahan Lombok",
-        category: "nature",
-        description: "Jelajahi keindahan sawah terasering dan kehidupan petani",
-        price: 300000,
-        duration: "4 jam",
-        image: "assets/images/rice-field.jpg",
-        includes: ["Transportasi", "Pemandu", "Cicipi hasil panen", "Air kelapa"]
+        title: "Secret Island 5 Gilis",
+        category: "gili",
+        description: "Snorkeling eksklusif di 5 gili tersembunyi Lombok",
+        price: 1500000,
+        duration: "9 jam",
+        minPerson: 2,
+        includes: [
+          "Private boat charter",
+          "Snorkeling equipment",
+          "Makan siang premium",
+          "Pemandu profesional"
+        ],
+        destinations: [
+          "Gili Gede",
+          "Gili Layar",
+          "Gili Renggit",
+          "Gili Petelu",
+          "Gili Nanggu"
+        ],
+        image: "assets/images/5gilis.jpg"
       },
-      
-      // 💦 Air Terjun
       {
         id: 9,
-        title: "Petualangan Benang Kelambu",
-        category: "waterfall",
-        description: "Trekking ke air terjun unik berbentuk kelambu",
-        price: 400000,
-        duration: "6 jam",
-        image: "assets/images/benang-kelambu.jpg",
-        includes: ["Transportasi", "Pemandu", "Tiket masuk", "Makan tradisional"]
+        title: "Gili Kondo Trip",
+        category: "gili",
+        description: "Hari penuh menikmati keindahan Gili Kondo dan sekitarnya",
+        price: 1300000,
+        duration: "8 jam",
+        minPerson: 2,
+        includes: [
+          "Transport kapal cepat",
+          "Snorkeling gear",
+          "Makan siang",
+          "Air mineral"
+        ],
+        destinations: [
+          "Gili Petagan",
+          "Gili Kondo",
+          "Gili Bidara"
+        ],
+        image: "assets/images/gili-kondo.jpg"
       },
       {
         id: 10,
-        title: "Sendang Gile & Tiu Kelep",
-        category: "waterfall",
-        description: "Kunjungan ke dua air terjun terkenal di Lombok Utara",
-        price: 450000,
-        duration: "7 jam",
-        image: "assets/images/sendang-gile.jpg",
-        includes: ["Transportasi", "Pemandu", "Tiket masuk", "Makan siang"]
+        title: "City Tour",
+        category: "culture",
+        description: "Jelajahi sisi perkotaan Lombok dengan sentuhan budaya",
+        price: 600000,
+        duration: "5 jam",
+        minPerson: 2,
+        includes: [
+          "Transportasi AC",
+          "Pemandu lokal",
+          "Tiket masuk",
+          "Air mineral"
+        ],
+        destinations: [
+          "Banyumulek",
+          "Islamic Center",
+          "Pura Lingsar"
+        ],
+        image: "assets/images/city-tour.jpg"
       },
-      
-      // 🏝️ Gili & Pelabuhan
       {
         id: 11,
-        title: "Gili Trawangan Getaway",
-        category: "gili",
-        description: "Trip sehari penuh menjelajahi Gili Trawangan",
-        price: 750000,
-        duration: "10 jam",
-        image: "assets/images/gili-trawangan.jpg",
-        includes: ["Transport kapal", "Sepeda", "Snorkeling gear", "Makan siang"]
+        title: "Shopping Souvenir",
+        category: "culture",
+        description: "Tur belanja oleh-oleh khas Lombok dari pengrajin langsung",
+        price: 500000,
+        duration: "4 jam",
+        minPerson: 2,
+        includes: [
+          "Transportasi AC",
+          "Pemandu belanja",
+          "Air mineral",
+          "Diskon khusus"
+        ],
+        destinations: [
+          "Pearl Shop",
+          "Food shop",
+          "Pottery Village",
+          "Hand weaving village"
+        ],
+        image: "assets/images/shopping-tour.jpg"
       },
       {
         id: 12,
-        title: "Snorkeling 3 Gili",
-        category: "gili",
-        description: "Snorkeling di spot terbaik sekitar Gili Trawangan, Meno & Air",
-        price: 850000,
+        title: "Origin Lombok",
+        category: "culture",
+        description: "Pengalaman otentik kehidupan asli masyarakat Lombok",
+        price: 800000,
         duration: "8 jam",
-        image: "assets/images/gili-snorkeling.jpg",
-        includes: ["Transport kapal", "Pemandu", "Perlengkapan snorkeling", "Makan"]
+        minPerson: 2,
+        includes: [
+          "Transportasi AC",
+          "Pemandu lokal",
+          "Makan siang tradisional",
+          "Tiket masuk"
+        ],
+        destinations: [
+          "Banyumulek",
+          "Sukarara",
+          "Selong Belanak Beach",
+          "Lancing/Mawun Beach",
+          "Batu Kotak"
+        ],
+        image: "assets/images/origin-lombok.jpg"
       },
       {
         id: 13,
-        title: "Private Boat Gili Nanggu",
+        title: "Snorkeling & Village",
         category: "gili",
-        description: "Trip eksklusif ke pulau pribadi Gili Nanggu",
-        price: 1200000,
+        description: "Kombinasi budaya dan petualangan bahari",
+        price: 950000,
+        duration: "7 jam",
+        minPerson: 2,
+        includes: [
+          "Transportasi darat & laut",
+          "Snorkeling gear",
+          "Pemandu bilingual",
+          "Makan siang"
+        ],
+        destinations: [
+          "Sukarara",
+          "Gili Nanggu",
+          "Gili Sudak/Tangkong",
+          "Gili Kedis"
+        ],
+        image: "assets/images/snorkeling-village.jpg"
+      },
+      {
+        id: 14,
+        title: "Waterfalls & Village",
+        category: "nature",
+        description: "Tur komplit air terjun dan desa tradisional",
+        price: 700000,
         duration: "8 jam",
-        image: "assets/images/gili-nanggu.jpg",
-        includes: ["Private boat", "Pemandu", "Snorkeling gear", "Makan seafood"]
+        minPerson: 2,
+        includes: [
+          "Transportasi AC",
+          "Pemandu profesional",
+          "Tiket masuk",
+          "Makan siang"
+        ],
+        destinations: [
+          "Sukarara",
+          "Sendang Gile",
+          "Tiu Kelep",
+          "Senaru traditional house"
+        ],
+        image: "assets/images/waterfall-village.jpg"
       }
     ];
 
@@ -330,39 +480,47 @@
 
       filtered.forEach(pkg => {
         const packageEl = document.createElement('div');
-        packageEl.className = 'package-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 relative';
+        packageEl.className = 'package-card bg-white rounded-xl shadow-md overflow-hidden relative';
+        
         packageEl.innerHTML = `
-          <div class="relative">
-            <img src="${pkg.image}" alt="${pkg.title}" class="w-full h-48 object-cover">
+          <div class="package-header"></div>
+          <div class="p-6 relative">
             <span class="category-tag ${getCategoryColor(pkg.category)}">
               ${getCategoryName(pkg.category)}
             </span>
-          </div>
-          <div class="p-6">
-            <h3 class="font-bold text-xl mb-2">${pkg.title}</h3>
-            <p class="text-gray-600 mb-4 text-sm">${pkg.description}</p>
             
-            <div class="flex justify-between items-center mb-4">
-              <div>
-                <span class="text-blue-600 font-bold text-lg">Rp${formatPrice(pkg.price)}</span>
-                <span class="text-gray-500 text-sm">/orang</span>
+            <h3 class="font-bold text-xl mb-2">${pkg.title}</h3>
+            <p class="text-gray-600 mb-3 text-sm">${pkg.description}</p>
+            
+            <div class="mb-4">
+              <p class="text-sm font-medium text-gray-700 mb-1">Destinasi:</p>
+              <div class="text-sm text-gray-700 space-y-1">
+                ${pkg.destinations.map(dest => `<div class="destination-item">${dest}</div>`).join('')}
               </div>
-              <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i>${pkg.duration}</span>
             </div>
             
             <div class="mb-4">
-              <p class="text-sm font-medium text-gray-700 mb-2">Termasuk:</p>
+              <p class="text-sm font-medium text-gray-700 mb-1">Termasuk:</p>
               <ul class="text-sm text-gray-600 space-y-1">
                 ${pkg.includes.map(item => `<li><i class="fas fa-check text-green-500 mr-2"></i>${item}</li>`).join('')}
               </ul>
             </div>
             
-            <button onclick="bookPackage('${pkg.title}', ${pkg.price})" 
+            <div class="flex justify-between items-center mb-4">
+              <div>
+                <span class="text-blue-600 font-bold text-lg">Rp${pkg.price.toLocaleString('id-ID')}</span>
+                <span class="text-gray-500 text-sm ml-1">/orang (min. ${pkg.minPerson})</span>
+              </div>
+              <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i>${pkg.duration}</span>
+            </div>
+            
+            <button onclick="bookPackage('${pkg.title}', ${pkg.price}, ${pkg.minPerson})" 
                     class="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-medium transition flex items-center justify-center">
               <i class="fas fa-calendar-check mr-2"></i> Pesan Sekarang
             </button>
           </div>
         `;
+        
         container.appendChild(packageEl);
       });
     }
@@ -373,9 +531,9 @@
       document.getElementById('packages-container').scrollIntoView({ behavior: 'smooth' });
     }
 
-    function bookPackage(packageName, packagePrice) {
+    function bookPackage(packageName, packagePrice, minPerson) {
       const subject = `Pemesanan Paket ${packageName}`;
-      const body = `Halo Lombok Wanderlust,\n\nSaya ingin memesan paket ${packageName} dengan harga Rp${formatPrice(packagePrice)}.\n\nMohon informasi lebih lanjut mengenai:\n- Jadwal yang tersedia\n- Cara pembayaran\n- Syarat dan ketentuan\n\nTerima kasih.\n\nNama:\nNo. HP:\nJumlah peserta:`;
+      const body = `Halo Lombok Wanderlust,\n\nSaya ingin memesan:\n\n*Paket:* ${packageName}\n*Harga:* Rp${packagePrice.toLocaleString('id-ID')}/orang\n*Minimum Peserta:* ${minPerson} orang\n\n*Detail Peserta:*\n- Nama Lengkap:\n- Nomor HP:\n- Tanggal Tour:\n- Jumlah Peserta:\n- Alamat Penjemputan (jika ada):\n\n*Pertanyaan:*\n1. Apakah tanggal tersebut tersedia?\n2. Bagaimana prosedur pembayaran?\n3. Apa saja yang perlu dipersiapkan?\n\nTerima kasih.`;
       
       window.location.href = `mailto:dagul8669@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
@@ -403,9 +561,19 @@
       return colors[category] || 'bg-gray-100 text-gray-800';
     }
 
-    function formatPrice(price) {
-      return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    // Chat Widget Functions
+    function toggleChatOptions() {
+      document.getElementById('chatOptions').classList.toggle('hidden');
     }
+
+    function showLiveChat() {
+      window.location.href = "mailto:dagul8669@gmail.com?subject=Live%20Chat%20Lombok%20Wanderlust";
+    }
+
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
 
     // Initialize
     let currentCategory = 'all';
