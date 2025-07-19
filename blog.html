@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Wisata - Lombok Wanderlust</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-tl from-blue-50 via-white to-blue-100 min-h-screen text-gray-800">
+  
+  <!-- Navbar (Sama dengan index.html) -->
+  <header class="fixed w-full bg-white/90 shadow-md z-20">
+    <nav class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow">
+          <img src="assets/images/logo.png" alt="Logo Lombok Wanderlust" class="w-8 h-8 rounded-full">
+        </div>
+        <span class="font-brand font-extrabold text-xl tracking-wider text-blue-700">Lombok Wanderlust</span>
+      </div>
+      <div class="hidden lg:flex gap-6 font-medium text-gray-700">
+        <a href="index.html#explore" class="hover:text-blue-700 transition">Paket Wisata</a>
+        <a href="wisata.html" class="hover:text-blue-700 transition">Wisata</a>
+        <a href="index.html#gallery" class="hover:text-blue-700 transition">Galeri</a>
+        <a href="index.html#about" class="hover:text-blue-700 transition">Tentang</a>
+        <a href="index.html#contact" class="hover:text-blue-700 transition">Kontak</a>
+      </div>
+      <div class="lg:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white/95 shadow-lg py-4">
+      <a href="index.html#explore" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Paket Wisata</a>
+      <a href="wisata.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Wisata</a>
+      <a href="index.html#gallery" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Galeri</a>
+      <a href="index.html#about" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Tentang</a>
+      <a href="index.html#contact" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Kontak</a>
+    </div>
+  </header>
+
+  <!-- Blog Content -->
+  <main class="pt-32 pb-16 px-6 max-w-5xl mx-auto">
+    <h1 class="font-brand text-4xl text-center text-blue-700 font-bold mb-12">Artikel Wisata Lombok</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Artikel 1 -->
+      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="assets/images/gili-trawangan.jpg" alt="Gili Trawangan" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <span class="text-sm text-blue-600">Destinasi Populer</span>
+          <h2 class="font-bold text-xl my-2">Panduan Lengkap Gili Trawangan</h2>
+          <p class="text-gray-600 mb-4">Temukan semua yang perlu Anda tahu sebelum mengunjungi pulau eksotis ini...</p>
+          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
+        </div>
+      </article>
+
+      <!-- Artikel 2 -->
+      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="assets/images/pink-beach.jpg" alt="Pink Beach" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <span class="text-sm text-blue-600">Destinasi Unik</span>
+          <h2 class="font-bold text-xl my-2">Misteri Pasir Pink di Lombok</h2>
+          <p class="text-gray-600 mb-4">Fakta ilmiah di balik keindahan pantai dengan pasir berwarna pink...</p>
+          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
+        </div>
+      </article>
+
+      <!-- Artikel 3 -->
+      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="assets/images/desa-sade.jpg" alt="Desa Sade" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <span class="text-sm text-blue-600">Budaya</span>
+          <h2 class="font-bold text-xl my-2">Mengenal Lebih Dekat Suku Sasak</h2>
+          <p class="text-gray-600 mb-4">Eksplorasi kehidupan tradisional di Desa Sade yang memesona...</p>
+          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
+        </div>
+      </article>
+
+      <!-- Artikel 4 -->
+      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="assets/images/tiu-kelep.jpg" alt="Air Terjun Tiu Kelep" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <span class="text-sm text-blue-600">Petualangan</span>
+          <h2 class="font-bold text-xl my-2">Trekking ke Air Terjun Tiu Kelep</h2>
+          <p class="text-gray-600 mb-4">Pengalaman tak terlupakan menyusuri hutan menuju air terjun...</p>
+          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
+        </div>
+      </article>
+
+      <!-- Artikel 5 -->
+      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="assets/images/sembalun.jpg" alt="Sembalun" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <span class="text-sm text-blue-600">Wisata Alam</span>
+          <h2 class="font-bold text-xl my-2">Golden Sunrise di Sembalun</h2>
+          <p class="text-gray-600 mb-4">Momen magis menyaksikan matahari terbit di lembah Rinjani...</p>
+          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
+        </div>
+      </article>
+
+      <!-- Artikel 6 -->
+      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="assets/images/narmada.jpg" alt="Taman Narmada" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <span class="text-sm text-blue-600">Sejarah</span>
+          <h2 class="font-bold text-xl my-2">Taman Narmada: Warisan Kerajaan</h2>
+          <p class="text-gray-600 mb-4">Mengungkap sejarah taman yang menjadi miniatur Gunung Rinjani...</p>
+          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center mt-12">
+      <nav class="flex items-center gap-2">
+        <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-md">1</a>
+        <a href="#" class="px-4 py-2 hover:bg-blue-100 rounded-md">2</a>
+        <a href="#" class="px-4 py-2 hover:bg-blue-100 rounded-md">3</a>
+        <a href="#" class="px-4 py-2 hover:bg-blue-100 rounded-md">Next →</a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Footer (Sama dengan index.html) -->
+  <footer class="bg-blue-800 text-white py-7">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 gap-4">
+      <div>
+        <span class="font-brand font-bold text-lg">Lombok Wanderlust</span> <span class="text-gray-300">© 2024</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html#explore" class="hover:underline text-gray-200">Paket Wisata</a>
+        <a href="index.html#about" class="hover:underline text-gray-200">Tentang</a>
+        <a href="index.html#contact" class="hover:underline text-gray-200">Kontak</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Widgets (Sama dengan index.html) -->
+  <div class="floating-widgets">
+    <a href="mailto:dagul8669@gmail.com" aria-label="Email Lombok Wanderlust"
+      class="floating-widget bg-gray-700 hover:bg-gray-800 text-white">
+      <img src="assets/icons/email.svg" alt="Email" class="w-6 h-6">
+    </a>
+    <a href="https://wa.me/62811222333" target="_blank" rel="noopener" aria-label="WhatsApp"
+      class="floating-widget bg-green-500 hover:bg-green-600 text-white">
+      <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
+    </a>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
