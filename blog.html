@@ -12,18 +12,18 @@
 </head>
 <body class="bg-gradient-to-tl from-blue-50 via-white to-blue-100 min-h-screen text-gray-800">
   
-  <!-- Navbar (Sama dengan index.html) -->
+  <!-- Navbar -->
   <header class="fixed w-full bg-white/90 shadow-md z-20">
     <nav class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
       <div class="flex items-center gap-2">
         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow">
-          <img src="assets/images/logo.png" alt="Logo Lombok Wanderlust" class="w-8 h-8 rounded-full">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0937cc3b-ceb1-4417-96e8-bed5efc2a3ce.png" alt="Logo Lombok Wanderlust" class="w-8 h-8 rounded-full">
         </div>
         <span class="font-brand font-extrabold text-xl tracking-wider text-blue-700">Lombok Wanderlust</span>
       </div>
       <div class="hidden lg:flex gap-6 font-medium text-gray-700">
-        <a href="index.html#explore" class="hover:text-blue-700 transition">Paket Wisata</a>
-        <a href="wisata.html" class="hover:text-blue-700 transition">Wisata</a>
+        <a href="wisata.html" class="hover:text-blue-700 transition">Paket Wisata</a>
+        <a href="blog.html" class="hover:text-blue-700 transition">Wisata</a>
         <a href="index.html#gallery" class="hover:text-blue-700 transition">Galeri</a>
         <a href="index.html#about" class="hover:text-blue-700 transition">Tentang</a>
         <a href="index.html#contact" class="hover:text-blue-700 transition">Kontak</a>
@@ -38,8 +38,8 @@
     </nav>
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden lg:hidden bg-white/95 shadow-lg py-4">
-      <a href="index.html#explore" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Paket Wisata</a>
-      <a href="wisata.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Wisata</a>
+      <a href="wisara.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Paket Wisata</a>
+      <a href="blog.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Wisata</a>
       <a href="index.html#gallery" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Galeri</a>
       <a href="index.html#about" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Tentang</a>
       <a href="index.html#contact" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Kontak</a>
@@ -50,86 +50,34 @@
   <main class="pt-32 pb-16 px-6 max-w-5xl mx-auto">
     <h1 class="font-brand text-4xl text-center text-blue-700 font-bold mb-12">Artikel Wisata Lombok</h1>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Artikel 1 -->
-      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/gili-trawangan.jpg" alt="Gili Trawangan" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <span class="text-sm text-blue-600">Destinasi Populer</span>
-          <h2 class="font-bold text-xl my-2">Panduan Lengkap Gili Trawangan</h2>
-          <p class="text-gray-600 mb-4">Temukan semua yang perlu Anda tahu sebelum mengunjungi pulau eksotis ini...</p>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
-        </div>
-      </article>
+    <!-- Category Filter -->
+    <div class="flex flex-wrap gap-3 justify-center mb-8">
+      <button onclick="filterArticles('all')" class="px-4 py-2 bg-blue-600 text-white rounded-full">Semua</button>
+      <button onclick="filterArticles('culture')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Budaya</button>
+      <button onclick="filterArticles('beach')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Pantai</button>
+      <button onclick="filterArticles('nature')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Alam</button>
+      <button onclick="filterArticles('waterfall')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Air Terjun</button>
+      <button onclick="filterArticles('gili')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Gili</button>
+      <button onclick="filterArticles('photo')" class="px-4 py-2 bg-white hover:bg-blue-100 rounded-full">Foto Spot</button>
+    </div>
 
-      <!-- Artikel 2 -->
-      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/pink-beach.jpg" alt="Pink Beach" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <span class="text-sm text-blue-600">Destinasi Unik</span>
-          <h2 class="font-bold text-xl my-2">Misteri Pasir Pink di Lombok</h2>
-          <p class="text-gray-600 mb-4">Fakta ilmiah di balik keindahan pantai dengan pasir berwarna pink...</p>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
-        </div>
-      </article>
-
-      <!-- Artikel 3 -->
-      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/desa-sade.jpg" alt="Desa Sade" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <span class="text-sm text-blue-600">Budaya</span>
-          <h2 class="font-bold text-xl my-2">Mengenal Lebih Dekat Suku Sasak</h2>
-          <p class="text-gray-600 mb-4">Eksplorasi kehidupan tradisional di Desa Sade yang memesona...</p>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
-        </div>
-      </article>
-
-      <!-- Artikel 4 -->
-      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/tiu-kelep.jpg" alt="Air Terjun Tiu Kelep" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <span class="text-sm text-blue-600">Petualangan</span>
-          <h2 class="font-bold text-xl my-2">Trekking ke Air Terjun Tiu Kelep</h2>
-          <p class="text-gray-600 mb-4">Pengalaman tak terlupakan menyusuri hutan menuju air terjun...</p>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
-        </div>
-      </article>
-
-      <!-- Artikel 5 -->
-      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/sembalun.jpg" alt="Sembalun" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <span class="text-sm text-blue-600">Wisata Alam</span>
-          <h2 class="font-bold text-xl my-2">Golden Sunrise di Sembalun</h2>
-          <p class="text-gray-600 mb-4">Momen magis menyaksikan matahari terbit di lembah Rinjani...</p>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
-        </div>
-      </article>
-
-      <!-- Artikel 6 -->
-      <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-        <img src="assets/images/narmada.jpg" alt="Taman Narmada" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <span class="text-sm text-blue-600">Sejarah</span>
-          <h2 class="font-bold text-xl my-2">Taman Narmada: Warisan Kerajaan</h2>
-          <p class="text-gray-600 mb-4">Mengungkap sejarah taman yang menjadi miniatur Gunung Rinjani...</p>
-          <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
-        </div>
-      </article>
+    <!-- Articles Grid -->
+    <div id="articles-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Articles will be loaded here by JavaScript -->
     </div>
 
     <!-- Pagination -->
     <div class="flex justify-center mt-12">
       <nav class="flex items-center gap-2">
-        <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-md">1</a>
-        <a href="#" class="px-4 py-2 hover:bg-blue-100 rounded-md">2</a>
-        <a href="#" class="px-4 py-2 hover:bg-blue-100 rounded-md">3</a>
-        <a href="#" class="px-4 py-2 hover:bg-blue-100 rounded-md">Next →</a>
+        <button onclick="loadPage(1)" class="px-4 py-2 bg-blue-600 text-white rounded-md">1</button>
+        <button onclick="loadPage(2)" class="px-4 py-2 hover:bg-blue-100 rounded-md">2</button>
+        <button onclick="loadPage(3)" class="px-4 py-2 hover:bg-blue-100 rounded-md">3</button>
+        <button onclick="nextPage()" class="px-4 py-2 hover:bg-blue-100 rounded-md">Next →</button>
       </nav>
     </div>
   </main>
 
-  <!-- Footer (Sama dengan index.html) -->
+  <!-- Footer -->
   <footer class="bg-blue-800 text-white py-7">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 gap-4">
       <div>
@@ -143,34 +91,358 @@
     </div>
   </footer>
 
-  <!-- Floating Social Media Widgets -->
-<div class="fixed flex flex-col gap-3 z-40" style="right:2rem;bottom:2rem;">
-  <!-- Email Widget -->
-  <a href="mailto:dagul8669@gmail.com" aria-label="Email Lombok Wanderlust"
-    class="bg-gray-700 hover:bg-gray-800 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
-    <!-- Email SVG -->
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-    </svg>
-  </a>
-  
-  <a href="https://wa.me/62811222333" target="_blank" rel="noopener" aria-label="Whatsapp Lombok Wanderlust"
-    class="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
-    <!-- WhatsApp SVG -->
-    <svg width="28" height="28" fill="currentColor" viewBox="0 0 32 32">
-      <path d="M16.003 5.334c-5.894 0-10.67 4.78-10.67 10.67a10.61 10.61 0 001.502 5.475l-1.565 5.623a1.337 1.337 0 001.637 1.641l5.583-1.566A10.644 10.644 0 0016 26.67c5.892 0 10.669-4.779 10.669-10.667 0-5.89-4.777-10.669-10.666-10.669zm0 19.186a8.491 8.491 0 01-4.331-1.19l-.312-.184-3.316.933.938-3.23-.203-.329a8.453 8.453 0 01-1.41-4.653c0-4.679 3.811-8.489 8.489-8.489 4.678 0 8.488 3.81 8.488 8.489s-3.811 8.489-8.489 8.489zm4.274-6.386c-.227-.114-1.344-.664-1.552-.74-.208-.076-.36-.114-.512.114-.152.228-.585.74-.717.893-.133.152-.264.171-.491.057-.228-.114-.959-.353-1.825-1.124-.675-.601-1.13-1.344-1.263-1.572-.133-.228-.014-.351.1-.464.102-.102.227-.265.34-.398.115-.133.151-.228.227-.379.075-.15.037-.285-.019-.398-.057-.114-.508-1.231-.697-1.686-.184-.439-.373-.378-.512-.385l-.433-.009c-.151 0-.396.057-.604.266s-.793.774-.793 1.887.812 2.196.924 2.348c.113.152 1.604 2.448 3.895 3.337.544.187.967.299 1.297.383.545.138 1.041.119 1.431.072.437-.053 1.344-.548 1.534-1.078.19-.53.19-.984.133-1.077-.056-.094-.207-.152-.434-.266z"/>
-    </svg>
-  </a>
-  <a href="https://t.me/lombokwanderlust" target="_blank" rel="noopener" aria-label="Telegram Lombok Wanderlust"
-    class="bg-blue-400 hover:bg-blue-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
-    <!-- Telegram SVG -->
-    <svg width="28" height="28" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-      <circle cx="120" cy="120" r="120" fill="#37AEE2"/>
-      <path d="M168 77c2-1 4 0 4 2l-21 101c0 2-3 3-4 1l-30-22-15 14c-1 1-3 1-3-1l3-19 66-62c1-1-1-2-2-1l-81 51-17-5c-2 0-2-3 0-3l134-53z" fill="#FFF"/>
-    </svg>
-  </a>
-</div>
+  <!-- Floating Widgets -->
+  <div class="fixed flex flex-col gap-3 z-40" style="right:2rem;bottom:2rem;">
+    <a href="mailto:dagul8669@gmail.com" aria-label="Email Lombok Wanderlust"
+      class="bg-gray-700 hover:bg-gray-800 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+    <a href="https://wa.me/62811222333" target="_blank" rel="noopener" aria-label="WhatsApp Lombok Wanderlust"
+      class="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
+      <svg width="28" height="28" fill="currentColor" viewBox="0 0 32 32">
+        <path d="M16.003 5.334c-5.894 0-10.67 4.78-10.67 10.67a10.61 10.61 0 001.502 5.475l-1.565 5.623a1.337 1.337 0 001.637 1.641l5.583-1.566A10.644 10.644 0 0016 26.67c5.892 0 10.669-4.779 10.669-10.667 0-5.89-4.777-10.669-10.666-10.669zm0 19.186a8.491 8.491 0 01-4.331-1.19l-.312-.184-3.316.933.938-3.23-.203-.329a8.453 8.453 0 01-1.41-4.653c0-4.679 3.811-8.489 8.489-8.489 4.678 0 8.488 3.81 8.488 8.489s-3.811 8.489-8.489 8.489zm4.274-6.386c-.227-.114-1.344-.664-1.552-.74-.208-.076-.36-.114-.512.114-.152.228-.585.74-.717.893-.133.152-.264.171-.491.057-.228-.114-.959-.353-1.825-1.124-.675-.601-1.13-1.344-1.263-1.572-.133-.228-.014-.351.1-.464.102-.102.227-.265.34-.398.115-.133.151-.228.227-.379.075-.15.037-.285-.019-.398-.057-.114-.508-1.231-.697-1.686-.184-.439-.373-.378-.512-.385l-.433-.009c-.151 0-.396.057-.604.266s-.793.774-.793 1.887.812 2.196.924 2.348c.113.152 1.604 2.448 3.895 3.337.544.187.967.299 1.297.383.545.138 1.041.119 1.431.072.437-.053 1.344-.548 1.534-1.078.19-.53.19-.984.133-1.077-.056-.094-.207-.152-.434-.266z"/>
+      </svg>
+    </a>
+  </div>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    // Complete article data for all destinations
+    const articles = [
+      // Budaya & Desa Tradisional
+      {
+        id: 1,
+        title: "Sukarara: Desa Tenun Tradisional Lombok",
+        category: "culture",
+        excerpt: "Menjelajahi keindahan tenun tangan tradisional di Desa Sukarara yang telah turun-temurun...",
+        image: "assets/images/sukarara.jpg"
+      },
+      {
+        id: 2,
+        title: "Keunikan Gerabah Banyumulek",
+        category: "culture",
+        excerpt: "Mengenal proses pembuatan gerabah khas Lombok di Desa Banyumulek yang terkenal...",
+        image: "assets/images/banyumulek.jpg"
+      },
+      {
+        id: 3,
+        title: "Kehidupan Tradisional di Desa Ende",
+        category: "culture",
+        excerpt: "Menyelami kehidupan sehari-hari masyarakat Sasak di Desa Ende yang masih tradisional...",
+        image: "assets/images/ende-village.jpg"
+      },
+      {
+        id: 4,
+        title: "Senaru: Gerbang Menuju Rinjani",
+        category: "culture",
+        excerpt: "Desa tradisional Senaru yang menjadi titik awal pendakian Gunung Rinjani...",
+        image: "assets/images/senaru.jpg"
+      },
+      {
+        id: 5,
+        title: "The Village: Potret Kehidupan Lokal",
+        category: "culture",
+        excerpt: "Mengamati kehidupan masyarakat lokal Lombok di permukiman tradisional...",
+        image: "assets/images/local-village.jpg"
+      },
+
+      // Pantai & Laut
+      {
+        id: 6,
+        title: "Pesona Tanjung Aan yang Memukau",
+        category: "beach",
+        excerpt: "Pasir sehalus tepung dan ombak biru di Tanjung Aan yang memikat hati...",
+        image: "assets/images/tanjung-aan.jpg"
+      },
+      {
+        id: 7,
+        title: "Selong Belanak: Surga Peselancar Pemula",
+        category: "beach",
+        excerpt: "Belajar berselancar di ombak yang ramah di Pantai Selong Belanak...",
+        image: "assets/images/selong-belanak.jpg"
+      },
+      {
+        id: 8,
+        title: "Mawun: Pantai Tersembunyi nan Eksotis",
+        category: "beach",
+        excerpt: "Menemukan keindahan tersembunyi Pantai Mawun yang berbentuk seperti bulan sabit...",
+        image: "assets/images/mawun-beach.jpg"
+      },
+      {
+        id: 9,
+        title: "Kuta Lombok: Pesona yang Tak Tertandingi",
+        category: "beach",
+        excerpt: "Menikmati sunset spektakuler di Pantai Kuta Lombok dengan pasir putihnya...",
+        image: "assets/images/kuta-lombok.jpg"
+      },
+      {
+        id: 10,
+        title: "Pink Beach 1: Keajaiban Alam Lombok",
+        category: "beach",
+        excerpt: "Menyaksikan langsung keunikan pasir pink alami di salah satu pantai langka dunia...",
+        image: "assets/images/pink-beach-1.jpg"
+      },
+      {
+        id: 11,
+        title: "Pink Beach 2: Surga Tersembunyi",
+        category: "beach",
+        excerpt: "Eksplorasi lebih dalam keindahan pantai pasir pink kedua di Lombok...",
+        image: "assets/images/pink-beach-2.jpg"
+      },
+
+      // Perbukitan & Alam
+      {
+        id: 12,
+        title: "Meresek Hill: Spot Sunset Terbaik",
+        category: "nature",
+        excerpt: "Pemandangan spektakuler dari ketinggian Meresek Hill yang memanjakan mata...",
+        image: "assets/images/meresek-hill.jpg"
+      },
+      {
+        id: 13,
+        title: "Persawahan Lombok: Hijau yang Menenangkan",
+        category: "nature",
+        excerpt: "Berjalan-jalan di antara hamparan sawah hijau yang luas di pedesaan Lombok...",
+        image: "assets/images/rice-field.jpg"
+      },
+      {
+        id: 14,
+        title: "Perkebunan Lombok: Aroma Rempah yang Menggoda",
+        category: "nature",
+        excerpt: "Mengunjungi perkebunan tradisional dengan berbagai tanaman khas Lombok...",
+        image: "assets/images/plantation.jpg"
+      },
+      {
+        id: 15,
+        title: "Monkey Forest: Bertemu Monyet Liar",
+        category: "nature",
+        excerpt: "Pengalaman unik berinteraksi dengan monyet-monyet liar di hutan Lombok...",
+        image: "assets/images/monkey-forest.jpg"
+      },
+      {
+        id: 16,
+        title: "Air Terjun Umum: Segarnya Alam Lombok",
+        category: "nature",
+        excerpt: "Menemukan kesegaran air terjun tersembunyi di pedalaman Lombok...",
+        image: "assets/images/general-waterfall.jpg"
+      },
+
+      // Air Terjun
+      {
+        id: 17,
+        title: "Keindahan Air Terjun Benang Kelambu",
+        category: "waterfall",
+        excerpt: "Air terjun unik yang menyerupai kelambu di Lombok Tengah...",
+        image: "assets/images/benang-kelambu.jpg"
+      },
+      {
+        id: 18,
+        title: "Benang Stokel: Air Terjun Bertingkat",
+        category: "waterfall",
+        excerpt: "Menikmati keindahan air terjun bertingkat dengan kolam alaminya...",
+        image: "assets/images/benang-stokel.jpg"
+      },
+      {
+        id: 19,
+        title: "Sendang Gile: Legenda dan Keindahan",
+        category: "waterfall",
+        excerpt: "Menggali legenda di balik keindahan Air Terjun Sendang Gile...",
+        image: "assets/images/sendang-gile.jpg"
+      },
+      {
+        id: 20,
+        title: "Tiu Kelep: Kekuatan Alam yang Menakjubkan",
+        category: "waterfall",
+        excerpt: "Merasakan kekuatan aliran deras Air Terjun Tiu Kelep yang spektakuler...",
+        image: "assets/images/tiu-kelep-waterfall.jpg"
+      },
+
+      // Gili & Pelabuhan
+      {
+        id: 21,
+        title: "Teluk Nare: Gerbang Menuju Gili",
+        category: "gili",
+        excerpt: "Pelabuhan tradisional yang menjadi titik keberangkatan ke gili-gili...",
+        image: "assets/images/teluk-nare.jpg"
+      },
+      {
+        id: 22,
+        title: "Tawun Harbour: Pesona Pelabuhan Tersembunyi",
+        category: "gili",
+        excerpt: "Mengamati kehidupan nelayan di pelabuhan kecil yang tenang...",
+        image: "assets/images/tawun-harbour.jpg"
+      },
+      {
+        id: 23,
+        title: "Tanjung Luar: Pasar Ikan yang Hidup",
+        category: "gili",
+        excerpt: "Menjelajahi pelabuhan ikan tradisional dengan aktivitas pagi yang sibuk...",
+        image: "assets/images/tanjung-luar.jpg"
+      },
+      {
+        id: 24,
+        title: "Gili Trawangan: Surga Tropis",
+        category: "gili",
+        excerpt: "Pengalaman tak terlupakan di pulau tanpa kendaraan bermotor...",
+        image: "assets/images/gili-trawangan.jpg"
+      },
+      {
+        id: 25,
+        title: "Gili Meno: Romantisme di Tengah Laut",
+        category: "gili",
+        excerpt: "Pulau kecil yang sempurna untuk bulan madu dan ketenangan...",
+        image: "assets/images/gili-meno.jpg"
+      },
+      {
+        id: 26,
+        title: "Gili Air: Keseimbangan Alam dan Kenyamanan",
+        category: "gili",
+        excerpt: "Menikmati kenyamanan modern dengan sentuhan alam yang masih asri...",
+        image: "assets/images/gili-air.jpg"
+      },
+      {
+        id: 27,
+        title: "Gili Nanggu: Pulau Pribadi nan Eksklusif",
+        category: "gili",
+        excerpt: "Pengalaman memiliki pulau pribadi untuk sehari penuh...",
+        image: "assets/images/gili-nanggu.jpg"
+      },
+      {
+        id: 28,
+        title: "Gili Sudak: Snorkeling di Tengah Tenang",
+        category: "gili",
+        excerpt: "Menikmati keindahan bawah laut tanpa keramaian turis...",
+        image: "assets/images/gili-sudak.jpg"
+      },
+      {
+        id: 29,
+        title: "Gili Kedis: Pulau Kecil Penuh Pesona",
+        category: "gili",
+        excerpt: "Mengunjungi pulau terkecil di gugusan Gili dengan keunikannya...",
+        image: "assets/images/gili-kedis.jpg"
+      },
+      {
+        id: 30,
+        title: "Gili Gede: Surga yang Masih Asli",
+        category: "gili",
+        excerpt: "Menemukan pesona Lombok tempo dulu di pulau yang belum terlalu terjamah...",
+        image: "assets/images/gili-gede.jpg"
+      },
+      {
+        id: 31,
+        title: "Gili Rengit: Keindahan yang Terlupakan",
+        category: "gili",
+        excerpt: "Mengeksplorasi pulau kecil dengan terumbu karang yang masih perawan...",
+        image: "assets/images/gili-rengit.jpg"
+      },
+      {
+        id: 32,
+        title: "Gili Petelu: Snorkeling di Surga Bawah Laut",
+        category: "gili",
+        excerpt: "Menemukan spot snorkeling terbaik dengan biota laut yang beragam...",
+        image: "assets/images/gili-petelu.jpg"
+      },
+      {
+        id: 33,
+        title: "Gili Gambir: Pesona Karang yang Memikat",
+        category: "gili",
+        excerpt: "Menyelami keindahan taman bawah laut yang memesona...",
+        image: "assets/images/gili-gambir.jpg"
+      },
+
+      // Foto Spot
+      {
+        id: 34,
+        title: "Malimbu: Spot Foto Terbaik di Lombok",
+        category: "photo",
+        excerpt: "Menangkap momen terbaik dengan latar belakang pemandangan laut spektakuler...",
+        image: "assets/images/malimbu.jpg"
+      }
+    ];
+
+    // Current page state
+    let currentPage = 1;
+    const articlesPerPage = 6;
+    let currentCategory = 'all';
+
+    // Initialize articles
+    document.addEventListener('DOMContentLoaded', function() {
+      loadArticles();
+    });
+
+    // Load articles based on current filter and page
+    function loadArticles() {
+      const container = document.getElementById('articles-container');
+      container.innerHTML = '';
+
+      const filtered = currentCategory === 'all' 
+        ? articles 
+        : articles.filter(article => article.category === currentCategory);
+
+      const start = (currentPage - 1) * articlesPerPage;
+      const paginated = filtered.slice(start, start + articlesPerPage);
+
+      if (paginated.length === 0) {
+        container.innerHTML = '<p class="col-span-full text-center py-12">Tidak ada artikel ditemukan</p>';
+        return;
+      }
+
+      paginated.forEach(article => {
+        const articleEl = document.createElement('article');
+        articleEl.className = 'bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition';
+        articleEl.innerHTML = `
+          <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <span class="text-sm text-blue-600">${getCategoryName(article.category)}</span>
+            <h2 class="font-bold text-xl my-2">${article.title}</h2>
+            <p class="text-gray-600 mb-4">${article.excerpt}</p>
+            <a href="#" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya →</a>
+          </div>
+        `;
+        container.appendChild(articleEl);
+      });
+    }
+
+    // Filter articles by category
+    function filterArticles(category) {
+      currentCategory = category;
+      currentPage = 1;
+      loadArticles();
+    }
+
+    // Load specific page
+    function loadPage(page) {
+      currentPage = page;
+      loadArticles();
+    }
+
+    // Go to next page
+    function nextPage() {
+      const totalArticles = currentCategory === 'all' 
+        ? articles.length 
+        : articles.filter(a => a.category === currentCategory).length;
+      const totalPages = Math.ceil(totalArticles / articlesPerPage);
+      
+      if (currentPage < totalPages) {
+        currentPage++;
+        loadArticles();
+      }
+    }
+
+    // Get category display name
+    function getCategoryName(category) {
+      const names = {
+        'culture': 'Budaya & Desa',
+        'beach': 'Pantai & Laut',
+        'nature': 'Alam & Bukit',
+        'waterfall': 'Air Terjun',
+        'gili': 'Gili & Pelabuhan',
+        'photo': 'Spot Foto'
+      };
+      return names[category] || 'Wisata';
+    }
+  </script>
 </body>
 </html>
